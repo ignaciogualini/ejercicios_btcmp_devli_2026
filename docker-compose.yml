@@ -21,6 +21,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     ports:
       - "${PGADMIN_PORT}:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
   # metabase-app:
   #   image: metabase/metabase
@@ -45,5 +47,7 @@ services:
 volumes:
   pgdata:
     name: pgdata
+  pgadmin_data:
+    name: pgadmin_data
   # metabase-data:
   #   name: metabase-data
