@@ -37,8 +37,6 @@ services:
       MB_DB_HOST: postgres-db
     ports:
       - ${METABASE_PORT}:3000
-    volumes:
-      - ./metabase-data:/metabase-data
     depends_on:
       - postgres-db
     links:
@@ -49,5 +47,3 @@ volumes:
     name: pgdata
   pgadmin_data:
     name: pgadmin_data
-  metabase-data:
-    name: metabase-data
